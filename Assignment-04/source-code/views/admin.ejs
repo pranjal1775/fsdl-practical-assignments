@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - SecureLife Insurance</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand"><i class="fas fa-shield-alt"></i> SecureLife Insurance</a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/policies">Policies</a></li>
+      <li><a href="/quote">Get Quote</a></li>
+      <li><a href="/admin" class="active">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
+    <p>Manage and review all customer quote requests</p>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+
+    <!-- Stats -->
+    <% const typeCount = {}; customers.forEach(c => { typeCount[c.policyType] = (typeCount[c.policyType] || 0) + 1; }); %>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#dbeafe;color:#1e40af"><i class="fas fa-users"></i></div>
+        <div class="stat-info"><strong><%= customers.length %></strong><span>Total Requests</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#dcfce7;color:#16a34a"><i class="fas fa-heartbeat"></i></div>
+        <div class="stat-info"><strong><%= typeCount['Health'] || 0 %></strong><span>Health</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-user-shield"></i></div>
+        <div class="stat-info"><strong><%= typeCount['Life'] || 0 %></strong><span>Life</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#fef3c7;color:#d97706"><i class="fas fa-car"></i></div>
+        <div class="stat-info"><strong><%= typeCount['Vehicle'] || 0 %></strong><span>Vehicle</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#fce7f3;color:#db2777"><i class="fas fa-home"></i></div>
+        <div class="stat-info"><strong><%= typeCount['Property'] || 0 %></strong><span>Property</span></div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-card">
+      <div class="table-card-header">
+        <i class="fas fa-list-alt"></i> Customer Requests (<%= customers.length %>)
+      </div>
+      <% if (customers.length === 0) { %>
+        <div class="empty-state">
+          <i class="fas fa-inbox"></i>
+          <p>No quote requests yet.</p>
+        </div>
+      <% } else { %>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Policy Type</th>
+                <th>Message</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% customers.forEach((customer, i) => {
+                const badgeMap = { Health:'badge-health', Life:'badge-life', Vehicle:'badge-vehicle', Property:'badge-property' };
+                const badge = badgeMap[customer.policyType] || 'badge-life';
+              %>
+                <tr>
+                  <td style="color:var(--gray-400)"><%= i + 1 %></td>
+                  <td><strong><%= customer.name %></strong></td>
+                  <td><%= customer.email %></td>
+                  <td><%= customer.phone %></td>
+                  <td><span class="badge <%= badge %>"><%= customer.policyType %></span></td>
+                  <td style="color:var(--gray-600);max-width:180px"><%= customer.message || '—' %></td>
+                  <td style="color:var(--gray-400);white-space:nowrap"><%= customer.date.toLocaleDateString('en-IN', {day:'numeric',month:'short',year:'numeric'}) %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      <% } %>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 <strong>SecureLife Insurance</strong>. Made with <i class="fas fa-heart"></i> for your protection.</p>
+</footer>
+
+</body>
+</html>

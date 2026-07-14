@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    padding-top: 70px;
+}
+
+/* Navbar */
+.navbar {
+    background: #020617;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
+}
+
+/* Hero Section */
+.hero {
+    background: radial-gradient(circle at top, #1e40af, #020617);
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Titles */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #020617;
+}
+
+/* Stats */
+.stat-box {
+    background: #020617;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* Skill Badges */
+.skill-badge {
+    background: linear-gradient(90deg, #2563eb, #22d3ee);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 8px;
+    display: inline-block;
+    font-size: 15px;
+    transition: transform 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* Custom Button */
+.btn-custom {
+    background: linear-gradient(90deg, #2563eb, #22d3ee);
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: #020617;
+    color: white;
+    padding: 20px 0;
+}

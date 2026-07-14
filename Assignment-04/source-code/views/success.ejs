@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Submitted - SecureLife Insurance</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand"><i class="fas fa-shield-alt"></i> SecureLife Insurance</a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/policies">Policies</a></li>
+      <li><a href="/quote">Get Quote</a></li>
+      <li><a href="/admin">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="success-section">
+  <div class="container">
+    <div class="success-icon"><i class="fas fa-check"></i></div>
+    <h2>Request Submitted!</h2>
+    <p>Thank you, <strong><%= customer.name %></strong>. Your quote request has been received.</p>
+    <p>We will contact you at <strong><%= customer.email %></strong> within 24 hours.</p>
+
+    <div class="success-card">
+      <div class="success-detail"><span>Name</span><strong><%= customer.name %></strong></div>
+      <div class="success-detail"><span>Email</span><strong><%= customer.email %></strong></div>
+      <div class="success-detail"><span>Phone</span><strong><%= customer.phone %></strong></div>
+      <div class="success-detail"><span>Policy Type</span><strong><%= customer.policyType %></strong></div>
+    </div>
+
+    <div class="success-actions">
+      <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+      <a href="/policies" class="btn" style="background:var(--gray-100);color:var(--gray-800)"><i class="fas fa-list"></i> View Policies</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 <strong>SecureLife Insurance</strong>. Made with <i class="fas fa-heart"></i> for your protection.</p>
+</footer>
+
+</body>
+</html>

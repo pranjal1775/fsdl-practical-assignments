@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Policies - SecureLife Insurance</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand"><i class="fas fa-shield-alt"></i> SecureLife Insurance</a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/policies" class="active">Policies</a></li>
+      <li><a href="/quote">Get Quote</a></li>
+      <li><a href="/admin">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h2><i class="fas fa-list-alt"></i> Our Insurance Policies</h2>
+    <p>Choose the right plan for your needs</p>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <% const typeMap = {
+      'Health':   { cls: 'type-health',    icon: 'fa-heartbeat',    badge: 'badge-health' },
+      'Life':     { cls: 'type-life',      icon: 'fa-user-shield',  badge: 'badge-life' },
+      'Vehicle':  { cls: 'type-vehicle',   icon: 'fa-car',          badge: 'badge-vehicle' },
+      'Property': { cls: 'type-property',  icon: 'fa-home',         badge: 'badge-property' }
+    }; %>
+    <div class="policies-grid">
+      <% policies.forEach(policy => {
+        const t = typeMap[policy.type] || { cls: 'type-life', icon: 'fa-shield-alt', badge: 'badge-life' };
+      %>
+        <div class="policy-card">
+          <div class="policy-card-header <%= t.cls %>">
+            <i class="fas <%= t.icon %>"></i>
+            <h3><%= policy.name %></h3>
+            <span class="type-badge"><%= policy.type %></span>
+          </div>
+          <div class="policy-card-body">
+            <div class="policy-detail">
+              <span><i class="fas fa-shield-alt"></i> Coverage</span>
+              <strong>₹<%= policy.coverage.toLocaleString() %></strong>
+            </div>
+            <div class="policy-detail">
+              <span><i class="fas fa-rupee-sign"></i> Annual Premium</span>
+              <strong>₹<%= policy.premium.toLocaleString() %>/yr</strong>
+            </div>
+            <div class="policy-detail">
+              <span><i class="fas fa-check-circle" style="color:var(--success)"></i> Status</span>
+              <strong style="color:var(--success)">Active</strong>
+            </div>
+          </div>
+          <div class="policy-card-footer">
+            <a href="/quote" class="btn btn-primary btn-sm"><i class="fas fa-file-alt"></i> Apply Now</a>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 <strong>SecureLife Insurance</strong>. Made with <i class="fas fa-heart"></i> for your protection.</p>
+</footer>
+
+</body>
+</html>
