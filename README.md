@@ -75,7 +75,7 @@ Develop a functional Insurance Website using Node.js, Express.js, and MongoDB.
 \*\*Live Website:\*\* 
 ```
 
-https://your-username.github.io/fsdl-practical-assignments/](https://pranjal1775.github.io/fsdl-practical-assignments/
+https://pranjal1775.github.io/fsdl-practical-assignments/
 
 ```
 
