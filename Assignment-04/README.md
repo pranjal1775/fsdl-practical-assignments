@@ -41,4 +41,4 @@ To develop a simple Insurance Management Website using Node.js and Express with 
 \## Output
 
 The Insurance Website allows users to view insurance plans and interact with the website through a functional Node.js and Express backend. Output screenshots are available in the `output-screenshots` folder.
-
+**Status:** Completed successfully.
