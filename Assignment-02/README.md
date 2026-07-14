@@ -35,4 +35,4 @@ To design a responsive Personal Portfolio webpage using HTML and CSS. Bootstrap 
 \## Output
 
 The Personal Portfolio webpage is responsive and displays personal details, skills, projects, and contact information. Output screenshots are available in the `output-screenshots` folder.
-
+**Status:** Completed successfully.
