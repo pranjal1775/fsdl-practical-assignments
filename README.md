@@ -72,15 +72,10 @@ Develop a functional Insurance Website using Node.js, Express.js, and MongoDB.
 
 
 
-\*\*Live Website:\*\* \*Add your GitHub Pages URL after deployment.\*
-
-
-
-Example:
-
+\*\*Live Website:\*\* 
 ```
 
-https://your-username.github.io/fsdl-practical-assignments/
+https://your-username.github.io/fsdl-practical-assignments/](https://pranjal1775.github.io/fsdl-practical-assignments/
 
 ```
 
