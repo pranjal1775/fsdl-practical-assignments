@@ -31,4 +31,5 @@ To create a static web page that demonstrates all HTML text formatting tags in a
 \## Output
 
 The webpage successfully displays all HTML text formatting tags in a tabular format. Output screenshots are available in the `output-screenshots` folder.
+**Status:** Completed successfully.
 
